@@ -1,0 +1,32 @@
+{
+  "servers": {
+    "loadmaster": {
+      "type": "stdio",
+      "command": "/home/chef/repos/LoadMaster/loadmaster-mcp/.venv/bin/python",
+      "args": [
+        "-m",
+        "loadmaster_mcp.server"
+      ],
+      "cwd": "/home/chef/repos/LoadMaster/loadmaster-mcp",
+      "env": {
+        "LM_HOST": "10.0.0.15",
+        "LM_PORT": "443",
+        "LM_USERNAME": "bal",
+        "LM_PASSWORD": "CHANGE_ME_PASSWORD",
+        "LM_VERIFY_SSL": "false",
+        "LM_TIMEOUT": "30"
+      },
+      "autoStart": true
+    },
+    "whatsup-gold-corpus": {
+      "type": "stdio",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "cwd": "/home/chef/repos/WhatsUp_Gold/mcp/server",
+      "autoStart": true
+    }
+  }
+}
